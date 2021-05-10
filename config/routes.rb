@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # get "/product_by_seg/:id", controller: "products", action: "product_by_id"
 
   get "/products" => "products#index"
+  post "/products" => "products#create"
   get "/products/:id" => "products#show"
+  patch "products/:id" => "products#update"
 end
