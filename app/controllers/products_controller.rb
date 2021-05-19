@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    products = Product.all
-    render json: products
+    sort_option = params[:sort] || "id"
+    sort_order = params[:sort_order] || "ASC"
+    products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
+
+    render json: products.as_json
   end
 
   def create
@@ -18,7 +21,7 @@ class ProductsController < ApplicationController
   
   def show
     product = Product.find(params[:id])
-    render json: product
+    render json: product.as_json
   end
   
   def update
@@ -27,6 +30,7 @@ class ProductsController < ApplicationController
     product.price = params[:price] || product.price
     product.description = params[:description] || product.description
     product.image_url = params[:image_url] || product.image_url
+    product.inventory = params[:inventory] || product.inventory
     product.save
     render json: product.as_json
   end
