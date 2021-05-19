@@ -1,10 +1,15 @@
 class ProductsController < ApplicationController
 
   def index
-    sort_option = params[:sort] || "id"
-    sort_order = params[:sort_order] || "ASC"
-    products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
+    # sort_option = params[:sort] || "id"
+    
+    sort_option = "id"
+    sort_option = params[:sort] if (params[:sort] == "price" || params[:sort] == "name")
 
+    sort_order = "ASC"
+    sort_order = params[:sort_order] if params[:sort_order] == "DESC"
+
+    products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
     render json: products.as_json
   end
 
