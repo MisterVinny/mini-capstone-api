@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
 
   def index
     # sort_option = params[:sort] || "id"
-    
+    # column_array = ["price", "name", "inventory"] # Try later using .include?(params[:sort]) in option.
+
     sort_option = "id"
     sort_option = params[:sort] if (params[:sort] == "price" || params[:sort] == "name")
 
