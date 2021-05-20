@@ -1,5 +1,19 @@
+# Fakeimage.create!([
+#   {url: "https://static.wikia.nocookie.net/sims/images/f/f1/Back_Slack_Recliner.jpg", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/1/10/Von_Braun_Recliner.jpg", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/6/61/Deck_Chair_by_Survivall.jpg", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/a/ae/Empress_Dining_Room_Chair.jpg", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/3/37/Parisienne_Dining_Chair.jpg", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/f/f5/Sioux_Sity_Wicker_Chair.png", product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/d/d1/The_M_Chair.jpg", product_id: Product.maximum(:id).next},
+#   {url:"https://static.wikia.nocookie.net/sims/images/b/bb/Touch_of_Teak_Dinette_Chair.jpg" , product_id: Product.maximum(:id).next},
+#   {url: "https://static.wikia.nocookie.net/sims/images/d/d1/Werkbunnst_All_Purpose_Chair.jpg", product_id: Product.maximum(:id).next}
+# ])
+# Would need a loop but this would work with index starting at 0 --> product_id: (Product.maximum(:id).next + i) 
+# It would put every product_id at the end of all existing product id's... not sure of the use. Could come in handy.
+
 # Image.create!([
-#   {url: "https://static.wikia.nocookie.net/sims/images/f/f1/Back_Slack_Recliner.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/f/f1/Back_Slack_Recliner.jpg"}
 #   {url: "https://static.wikia.nocookie.net/sims/images/1/10/Von_Braun_Recliner.jpg"},
 #   {url: "https://static.wikia.nocookie.net/sims/images/6/61/Deck_Chair_by_Survivall.jpg"},
 #   {url: "https://static.wikia.nocookie.net/sims/images/a/ae/Empress_Dining_Room_Chair.jpg"},

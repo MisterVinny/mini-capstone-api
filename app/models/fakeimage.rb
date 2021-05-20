@@ -1,0 +1,2 @@
+class Fakeimage < ApplicationRecord
+end
