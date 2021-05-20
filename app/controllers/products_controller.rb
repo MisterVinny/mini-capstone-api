@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     sort_order = params[:sort_order] if params[:sort_order] == "DESC"
 
     products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
-    render json: products.as_json
+    render json: products
   end
 
   def create
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   
   def show
     product = Product.find(params[:id])
-    render json: product.as_json
+    render json: product
   end
   
   def update
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
     product.image_url = params[:image_url] || product.image_url
     product.inventory = params[:inventory] || product.inventory
     product.save
-    render json: product.as_json
+    render json: product
   end
   
   def destroy

@@ -1,3 +1,16 @@
+# Image.create!([
+#   {url: "https://static.wikia.nocookie.net/sims/images/f/f1/Back_Slack_Recliner.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/1/10/Von_Braun_Recliner.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/6/61/Deck_Chair_by_Survivall.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/a/ae/Empress_Dining_Room_Chair.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/3/37/Parisienne_Dining_Chair.jpg"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/f/f5/Sioux_Sity_Wicker_Chair.png"},
+#   {url: "https://static.wikia.nocookie.net/sims/images/d/d1/The_M_Chair.jpg"},
+#   {url:"https://static.wikia.nocookie.net/sims/images/b/bb/Touch_of_Teak_Dinette_Chair.jpg" },
+#   {url: "https://static.wikia.nocookie.net/sims/images/d/d1/Werkbunnst_All_Purpose_Chair.jpg"}
+# ])
+
+
 # Supplier.create!([
 #   {name: "Hassel de Hoff Chairs", email: "hhoffchairs@gmail.com", phone_number: "(123)444-9876"},
 #   {name: "Seating Elite", email: "seatelite@gmail.com", phone_number: "(333)444-2323"},
