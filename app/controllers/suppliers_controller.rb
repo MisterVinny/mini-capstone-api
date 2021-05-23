@@ -2,11 +2,16 @@ class SuppliersController < ApplicationController
 
   def index
     suppliers = Supplier.all
-    render json: suppliers.as_json
+    render json: suppliers
   end
   
   def create
-    supplier = Supplier.find(params[:id])
+    supplier = Supplier.new({
+      name: params[:name],
+      email: params[:email],
+      phone_number: params[:phone_number]
+      })
+    supplier.save ? ( render json: supplier ) : ( render json: {errors: supplier.errors.full_messages}, status: :unprocessable_entity)
   end
   
 end

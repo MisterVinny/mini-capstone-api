@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
 
   def index
-    # sort_option = params[:sort] || "id"
-    # column_array = ["price", "name", "inventory"] # Try later using .include?(params[:sort]) in option.
-
     sort_option = "id"
     sort_option = params[:sort] if (params[:sort] == "price" || params[:sort] == "name")
 
@@ -18,10 +15,17 @@ class ProductsController < ApplicationController
     product = Product.new({
       name: params[:name],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      supplier_id: params[:supplier_id]
     })
-    product.save
-    render json: {message: product}
+    # product.save ? ( render json: product ) : ( render json: {errors: product.errors.full_messages}, status: :unprocessable_entity )
+    # Adds ability to create a new image with the product
+    if product.save
+      ( Image.create({url: params[:url], product_id: product.id}) ) if params[:url]
+      render json: product
+    else
+      render json: {errors: product.errors.full_messages}, status: :unprocessable_entity
+    end
   end
   
   def show
@@ -34,9 +38,8 @@ class ProductsController < ApplicationController
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
     product.description = params[:description] || product.description
-    product.inventory = params[:inventory] || product.inventory
-    product.save
-    render json: product
+    product.inventory_count = params[:inventory_count] || product.inventory_count
+    product.save ? ( render json: product ) : ( render json: {errors: product.errors.full_messages}, status: :unprocessable_entity )
   end
   
   def destroy
