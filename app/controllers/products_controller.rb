@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_user
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     sort_option = "id"
     sort_option = params[:sort] if (params[:sort] == "price" || params[:sort] == "name")
