@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 
-  before_action :authenticate_user
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
@@ -21,7 +20,6 @@ class ProductsController < ApplicationController
       description: params[:description],
       supplier_id: params[:supplier_id]
     })
-    # product.save ? ( render json: product ) : ( render json: {errors: product.errors.full_messages}, status: :unprocessable_entity )
     # Adds ability to create a new image with the product
     if product.save
       ( Image.create({url: params[:url], product_id: product.id}) ) if params[:url]

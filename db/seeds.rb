@@ -1,17 +1,17 @@
-CategoryProduct.create!([
-  {category_id: 3, product_id: 4},
-  {category_id: 3, product_id: 5},
-  {category_id: 2, product_id: 8},
-  {category_id: 3, product_id: 6},
-  {category_id: 3, product_id: 7},
-  {category_id: 2, product_id: 9},
-  {category_id: 4, product_id: 1},
-  {category_id: 4, product_id: 13},
-  {category_id: 4, product_id: 2},
-  {category_id: 4, product_id: 14},
-  {category_id: 5, product_id: 15},
-  {category_id: 4, product_id: 3}
-])
+# CategoryProduct.create!([
+#   {category_id: 3, product_id: 4},
+#   {category_id: 3, product_id: 5},
+#   {category_id: 2, product_id: 8},
+#   {category_id: 3, product_id: 6},
+#   {category_id: 3, product_id: 7},
+#   {category_id: 2, product_id: 9},
+#   {category_id: 4, product_id: 1},
+#   {category_id: 4, product_id: 13},
+#   {category_id: 4, product_id: 2},
+#   {category_id: 4, product_id: 14},
+#   {category_id: 5, product_id: 15},
+#   {category_id: 4, product_id: 3}
+# ])
 
 # Category.create!([
 #   {name: "Chairs"},
