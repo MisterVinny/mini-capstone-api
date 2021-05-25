@@ -9,8 +9,15 @@ class ProductsController < ApplicationController
     sort_order = "ASC"
     sort_order = params[:sort_order] if params[:sort_order] == "DESC"
 
-    products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
-    render json: products
+    # if params[:category]
+    #   category = Category.find_by("name iLIKE ?", params[:category])
+    #   products = category.products
+    #   render json: products.sort_by { |k| k.name }
+    # else
+      products = Product.where("name iLIKE ?", "%#{params[:search]}%").reorder("#{sort_option} #{sort_order}")
+      render json: products
+    # end
+
   end
 
   def create
